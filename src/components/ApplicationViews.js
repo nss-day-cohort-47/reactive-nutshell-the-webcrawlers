@@ -1,13 +1,21 @@
 import React from "react"
 import { Route } from "react-router-dom"
 
+import { ArticleForm } from "./articles/articleForm"
+import { ArticleList } from "./articles/articleList"
+
 export const ApplicationViews = () => {
   return (
     <>
 
       <Route exact path="/">
         {/* Render the component for news articles */}
+        <ArticleList />
       </Route>
+      <Route path="/articles/create">
+        <ArticleForm />
+      </Route>
+
       <Route path="/friends">
         {/* Render the component for list of friends */}
       </Route>
