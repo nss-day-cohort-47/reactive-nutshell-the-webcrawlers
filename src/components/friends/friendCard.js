@@ -1,12 +1,12 @@
 import React from "react"
-import "./friendCard.css"
+import "./FriendCard.css"
 import { Link } from "react-router-dom"
 
-export const FriendCard = ({friend, handleDeletefriend}) => (
+export const FriendCard = ({friend, handleDeleteFriend}) => (
     <section className="friend">
         <h3 className="friend__name">{friend.name}</h3>
-        <div className="friend__breed">Address: {friend.address}</div>
-        <button type="button" onClick={() => handleDeletefriend(friend.id)}>Unsave</button>
+        {/* <div className="friend__address">Address: {friend.address}</div> */}
+        <button type="button" onClick={() => handleDeleteFriend(friend.id)}>Remove</button>
         {/* <Link to={`/friends/${friend.id}`}>
   {/* <button>Details</button> */}
 {/* </Link> */}

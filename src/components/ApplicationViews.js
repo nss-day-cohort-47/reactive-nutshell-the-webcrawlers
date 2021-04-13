@@ -1,9 +1,21 @@
 import React from "react"
 import { Route } from "react-router-dom"
 
+import { FriendCard } from "./friends/FriendCard"
+import { FriendList } from "./friends/FriendList"
+
 export const ApplicationViews = () => {
   return (
     <>
+
+<Route exact path="/">
+        {/* Render the component for news articles */}
+        <FriendList />
+      </Route>
+      <Route path="/friends">
+        <FriendCard />
+      </Route>
+
 
       <Route exact path="/">
         {/* Render the component for news articles */}
