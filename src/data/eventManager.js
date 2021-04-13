@@ -1,25 +1,25 @@
 //where we're serving our json file
 const remoteURL = "http://localhost:8088"
 
-export const getTaskById = (id) => {
+export const getEventById = (id) => {
   //fetch call to grab tasks by their Id. 
-  return fetch(`${remoteURL}/tasks/${id}?_expand=`)
+  return fetch(`${remoteURL}/events/${id}?_expand=`)
   .then(res => res.json())
 }
 
-export const getAllTasks = () => {
+export const getAllEvents = () => {
     //fetch call that displays all of the tasks. 
-  return fetch(`${remoteURL}/tasks/?_expand=`)
+  return fetch(`${remoteURL}/events/?_expand=`)
   .then(result => result.json())
 }
 
-export const addTask = (newTask) => {
-  return fetch(`${remoteURL}/tasks`, {
+export const addEvent = (newEvent) => {
+  return fetch(`${remoteURL}/events`, {
       method: "POST",
       headers: {
           "Content-Type": "application/json"
       },
-      body: JSON.stringify(newTask)
+      body: JSON.stringify(newEvent)
   }).then(response => response.json())
 }
 

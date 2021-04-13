@@ -1,0 +1,1 @@
+//the component that will display all of the cards on the events page. 
