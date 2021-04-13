@@ -24,22 +24,18 @@ export const addEvent = (newEvent) => {
 }
 
 
-
-
-/*
-export const updateEmployee = (editedEmployee) =>{
-  return fetch(`${remoteURL}/employees/${editedEmployee.id}`, {
+export const updateEvent = (editedEvent) =>{
+  return fetch(`${remoteURL}/event/${editedEvent.id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json"
     },
-    body: JSON.stringify(editedEmployee)
+    body: JSON.stringify(editedEvent)
   }).then(data => data.json());
 }
 
-export const deleteEmployee = (id) => {
-  return fetch(`${remoteURL}/employees/${id}`, {
+export const deleteEvent = (id) => {
+  return fetch(`${remoteURL}/event/${id}`, {
     method: "DELETE"
   }).then(result => result.json())
 }
-*/
