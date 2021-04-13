@@ -1,5 +1,6 @@
 const remoteURL = "http://localhost:8088"
 
+// fetch calls used to grab data 
 export const getAllArticles = () => {
     return fetch(`${remoteURL}/articles`)
         .then(result => result.json())
@@ -26,7 +27,7 @@ export const addArticle = (newArticle) => {
     }).then(response => response.json())
 }
 
-export const updateCustomer = (editedArticle) => {
+export const updateArticle = (editedArticle) => {
     return fetch(`${remoteURL}/articles/${editedArticle.id}`, {
         method: "PUT",
         headers: {

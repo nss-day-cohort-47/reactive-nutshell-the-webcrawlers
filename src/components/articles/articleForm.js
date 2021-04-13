@@ -1,3 +1,6 @@
+//Creayed by: Sidney Crandall. 
+//Purpose: Form to add new articles by users. 
+
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { addArticle } from '../../data/articlesManager';
@@ -5,6 +8,8 @@ import { getAllUsers } from '../../data/usersManager';
 import './articleForm.css';
 
 export const ArticleForm = () => {
+
+    //destructure for useState, which sets a variable and empty array to be used.
     const [article, setArticle] = useState({
         title: "",
         synopsis: "",
@@ -13,11 +18,17 @@ export const ArticleForm = () => {
         userId: 0
     });
 
+    // isLoading and setIsLoading are used to hold off click events until
+    // all data fiels are entered. They are set to false initially.  
     const [isLoading, setIsLoading] = useState(false);
+
+    // props used to identify the creator of the article.
     const [users,  setUsers] = useState([]);
 
+    // react native to render the previous page after an action.
     const history = useHistory();
 
+    // click event used for the id of the user.
     const handleControlledInputChange = (event) => {
         const newArticle = { ...article }
         let selectedVal = event.target.value
@@ -28,6 +39,7 @@ export const ArticleForm = () => {
             setArticle(newArticle)
     }
 
+    //gathers the users array for the db and parses thru it for form input
     useEffect(() => {
         getAllUsers()
             .then(usersFromAPI => {
@@ -36,20 +48,22 @@ export const ArticleForm = () => {
         setIsLoading(false)
 }, []);
 
+    // click event used to ensure that all 
+    //fields are filled in before adding the article to the dashboard
+    // userId is invoked in order to pull the data from db 
     const handleClickSaveArticle = (event) => {
         event.preventDefault()
-
         const userId = article.userId
-
         if (userId === 0 ) {
-            window.alert("Please select an user")
+            window.alert("Please fill out all fields.")
         }
         else {
             addArticle(article)
-                .then(() => history.push("/articles"))
+                .then(() => history.push("/"))
         }
     }
 
+    // fieldset form to add new Articles to the dashboard
     return (
         <form className="articleForm">
             <h2 className="articleFrom_title">New(s) Article</h2>
