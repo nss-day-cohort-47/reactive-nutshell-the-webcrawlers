@@ -7,7 +7,10 @@ Please delete options that are not relevant.
 - [ ] New feature (non-breaking change which adds functionality)
 - [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
 # Testing Instructions
-Please describe the tests required to verify your changes. Provide instructions so PR Tester can check functionality. Please also list any relevant details for your tests
+1. Run `json-server -p 8088 -w database.json`  in api directory of project
+2. Run `npm start` in root of project
+3. Test feature
+
 # Checklist:
 - [ ] My code follows the style guidelines of this project
 - [ ] I have performed a self-review of my own code
