@@ -13,11 +13,9 @@ export const ApplicationViews = () => {
         {/* Render the component for news articles */}
         <ArticleList />
       </Route>
-
       <Route path="/articles/create">
         <ArticleForm />
       </Route>
-
       <Route path="/articles/:articleId(\d+)/edit">
         <ArticleEditForm />
       </Route>
