@@ -75,3 +75,7 @@ You will be using [session storage](https://javascript.info/localstorage#session
    * Short paragraphs
    * Bulleted lists
 7. Strive for consistency.
+
+ERD:
+<img src="nutshellerd.JPG">
+<img src="nutshellwireframe.JPG">
