@@ -7,10 +7,10 @@ export const getTaskById = (id) => {
 
 export const getAllTasks = () => {
     return fetch (`${remoteURL}/tasks/`)
-    .then(res => res.json)
+    .then(res => res.json())
 }
 
-export const addTasks = (newTasks) => {
+export const addTask = (newTasks) => {
     return fetch(`${remoteURL}/tasks/`, {
         method: "POST",
         headers: {

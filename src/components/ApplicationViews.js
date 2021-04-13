@@ -3,6 +3,8 @@ import { Route } from "react-router-dom"
 
 import { ArticleForm } from "./articles/articleForm"
 import { ArticleList } from "./articles/articleList"
+import { TaskList } from "./tasks/taskList"
+import { TaskForm } from "./tasks/taskForm"
 
 export const ApplicationViews = () => {
   return (
@@ -24,6 +26,13 @@ export const ApplicationViews = () => {
       </Route>
       <Route path="/tasks">
         {/* Render the component for the user's tasks */}
+        <h2>Tasks</h2>
+                <section>
+                    <TaskList />
+                </section>
+      </Route>
+      <Route path="/tasks/create">
+        <TaskForm />
       </Route>
       <Route path="/events">
         {/* Render the component for the user's events */}
