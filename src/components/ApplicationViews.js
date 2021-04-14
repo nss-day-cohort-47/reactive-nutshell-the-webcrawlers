@@ -7,6 +7,7 @@ import { ArticleList } from "./articles/articleList"
 
 import { TaskList } from "./tasks/taskList"
 import { TaskForm } from "./tasks/taskForm"
+import { TaskEditForm } from "./tasks/taskEditForm"
 
 import { EventList } from "./events/eventList"
 import { EventForm } from "./events/eventForm"
@@ -42,6 +43,9 @@ export const ApplicationViews = () => {
       </Route>
       <Route path="/tasks/create">
         <TaskForm />
+      </Route>
+      <Route path="/tasks/:taskId(\d+)/edit">
+        <TaskEditForm />
       </Route>
       <Route path="/events">
         {/* Render the component for the user's events */}

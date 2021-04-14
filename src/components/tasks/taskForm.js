@@ -9,6 +9,7 @@ export const TaskForm = () => {
         name: "",
         description: "",
         completion: "",
+        isCompleted: false,
         userId: 0
     });
 
@@ -45,7 +46,7 @@ export const TaskForm = () => {
         }
         else {
             addTask(task)
-                .then(() => history.push("/tasks"))
+                .then(() => history.push("/"))
         }
     }
 

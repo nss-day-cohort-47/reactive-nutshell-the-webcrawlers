@@ -6,7 +6,7 @@ export const getTaskById = (id) => {
 }
 
 export const getAllTasks = () => {
-    return fetch (`${remoteURL}/tasks/`)
+    return fetch (`${remoteURL}/tasks/?_expand=user`)
     .then(res => res.json())
 }
 
@@ -21,7 +21,7 @@ export const addTask = (newTasks) => {
 }
 
 export const updateTask = (editedTask) =>{
-    return fetch(`${remoteURL}/employees/${editedTask.id}`, {
+    return fetch(`${remoteURL}/tasks/${editedTask.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
