@@ -1,4 +1,4 @@
-//
+//Authored by Salma Crank
 //
 
 import React, { useState, useEffect } from 'react';

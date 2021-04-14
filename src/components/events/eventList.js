@@ -1,3 +1,4 @@
+//Authored by Salma Crank
 //the component that will display all of the cards on the events page. 
 
 import React, { useState, useEffect } from 'react';

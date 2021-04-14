@@ -1,4 +1,4 @@
-// Adapted by: Salma Crank
+// Authored by: Salma Crank
 // Edit Form for users to edit the articles that have posted.
 
 import React, { useState, useEffect } from "react";

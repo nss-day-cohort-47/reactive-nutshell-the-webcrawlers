@@ -1,3 +1,4 @@
+//Authored by Salma Crank
 //where we're serving our json file
 const remoteURL = "http://localhost:8088"
 
