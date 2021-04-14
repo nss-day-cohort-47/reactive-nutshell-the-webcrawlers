@@ -25,7 +25,7 @@ export const addEvent = (newEvent) => {
 
 
 export const updateEvent = (editedEvent) =>{
-  return fetch(`${remoteURL}/event/${editedEvent.id}`, {
+  return fetch(`${remoteURL}/events/${editedEvent.id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json"
@@ -35,7 +35,7 @@ export const updateEvent = (editedEvent) =>{
 }
 
 export const deleteEvent = (id) => {
-  return fetch(`${remoteURL}/event/${id}`, {
+  return fetch(`${remoteURL}/events/${id}`, {
     method: "DELETE"
   }).then(result => result.json())
 }

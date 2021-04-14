@@ -10,6 +10,7 @@ import { TaskForm } from "./tasks/taskForm"
 
 import { EventList } from "./events/eventList"
 import { EventForm } from "./events/eventForm"
+import { EventEditForm } from "./events/eventEditForm"
 
 
 export const ApplicationViews = () => {
@@ -49,6 +50,9 @@ export const ApplicationViews = () => {
       </Route>
       <Route path="/events/create">
         <EventForm />
+      </Route>
+      <Route path="/events/:eventId(\d+)/edit">
+        <EventEditForm />
       </Route>
     </>
   )
