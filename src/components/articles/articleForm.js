@@ -7,6 +7,8 @@ import { addArticle } from '../../data/articlesManager';
 import { getAllUsers } from '../../data/usersManager';
 import './articleForm.css';
 
+// Timestamp details to give the articles a date for the database
+
 export const ArticleForm = () => {
 
     //destructure for useState, which sets a variable and empty array to be used.
@@ -14,12 +16,12 @@ export const ArticleForm = () => {
         title: "",
         synopsis: "",
         url: "",
-        timestamp: "",
+        timestamp: new Date().toLocaleString(),
         userId: 0
     });
 
     // isLoading and setIsLoading are used to hold off click events until
-    // all data fiels are entered. They are set to false initially.  
+    // all data fields are entered. They are set to false initially.  
     const [isLoading, setIsLoading] = useState(false);
 
     // props used to identify the creator of the article.
@@ -49,7 +51,7 @@ export const ArticleForm = () => {
 }, []);
 
     // click event used to ensure that all 
-    //fields are filled in before adding the article to the dashboard
+    // fields are filled in before adding the article to the dashboard
     // userId is invoked in order to pull the data from db 
     const handleClickSaveArticle = (event) => {
         event.preventDefault()
