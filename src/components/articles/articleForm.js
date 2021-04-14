@@ -21,7 +21,7 @@ export const ArticleForm = () => {
     });
 
     // isLoading and setIsLoading are used to hold off click events until
-    // all data fiels are entered. They are set to false initially.  
+    // all data fields are entered. They are set to false initially.  
     const [isLoading, setIsLoading] = useState(false);
 
     // props used to identify the creator of the article.
@@ -51,7 +51,7 @@ export const ArticleForm = () => {
 }, []);
 
     // click event used to ensure that all 
-    //fields are filled in before adding the article to the dashboard
+    // fields are filled in before adding the article to the dashboard
     // userId is invoked in order to pull the data from db 
     const handleClickSaveArticle = (event) => {
         event.preventDefault()

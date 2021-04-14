@@ -2,7 +2,7 @@ import React from "react";
 import "./article.css"
 import { useHistory } from "react-router-dom";
 
-
+// Single card render for one Article. it is how it will render on the dashboard,
 export const ArticleCard = ({ article, handleDeleteArticle }) => { 
 
     const history = useHistory();
@@ -19,9 +19,3 @@ export const ArticleCard = ({ article, handleDeleteArticle }) => {
     </div>
     )
 }
-
-
-/*<Link to={`/articles/${article.id}`}>
-<button>Details</button>
-<input nam="articleTimestamp" type="hidden" value="{article.timestamp}"></input>
-</Link>*/
