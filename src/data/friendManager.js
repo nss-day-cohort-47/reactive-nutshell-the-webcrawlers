@@ -1,18 +1,40 @@
-// const remoteURL = "http://localhost:8088"
+const remoteURL = "http://localhost:8088"
 
-// export const getUserById = (userID) => {
-//     //be sure your customers have good data and related to a location and customer
-//    return fetch(`${remoteURL}/users/${userID}`)
-//     .then(res => res.json())
-//   }
+export const getFriendByUserId = (userId) => {
+    return fetch (`${remoteURL}/friends?userId=${userId}`)
+    .then(res => res.json())
+}
 
-//   export const getAllCustomers = () => {
-//     return fetch(`${remoteURL}/customers`)
-//     .then(res => res.json())
-//   }
 
-//   export const deleteCustomer = (id) => {
-//     return fetch(`${remoteURL}/customers/${id}`, {
-//       method: "DELETE"
-//     }).then(result => result.json())
-//   }
+export const getAllFriends = () => {
+    return fetch (`${remoteURL}/friends?_expand=user`)
+    .then(res => res.json())
+}
+
+
+export const deleteFriend = (id) => {
+    return fetch(`${remoteURL}/friends/${id}`, {
+        method: "DELETE"
+    }).then(result => result.json())
+}
+
+
+// export const addFriends = (newfriends) => {
+//     return fetch(`${remoteURL}/friends/`, {
+//         method: "POST",
+//         headers: {
+//             "Content-Type": "application/json"
+//         },
+//         body: JSON.stringify(newfriends)
+//     }).then(response => response.json())
+// }
+
+// export const updateFriend = (editedfriend) =>{
+//     return fetch(`${remoteURL}/employees/${editedfriend.id}`, {
+//       method: "PUT",
+//       headers: {
+//         "Content-Type": "application/json"
+//       },
+//       body: JSON.stringify(editedfriend)
+//     }).then(data => data.json())
+// }

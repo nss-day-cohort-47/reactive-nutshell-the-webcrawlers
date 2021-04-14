@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { getFriendById } from '../../modules/FriendManager';
+import { getFriendByUserId } from '../../friends/FriendManager';
 import './FriendDetail.css';
 import { useHistory, useParams } from "react-router-dom"
-import { deleteFriend } from "../../modules/FriendManager"
+import { deleteFriend } from "../../data/FriendManager"
 
 export const FriendDetail = () => {
   const [friend, setFriend] = useState({ name: "", breed: "" });
@@ -12,14 +12,13 @@ export const FriendDetail = () => {
   const history = useHistory();
 
   useEffect(() => {
-    //getFriendById(id) from friendManager and hang on to the data; put it into state
+    //getFriendByUserId(id) from friendManager and hang on to the data; put it into state
     console.log("useEffect", friendId)
-    getFriendById(friendId)
+
+    getFriendByUserId(sessionStorage.getItem("nutshell_user"))
       .then(friend => {
         setFriend({
-          name: friend.name,
-          friend: friend.friend,
-          hours: friend.hours
+          name: friend.name
         });
         setIsLoading(false);
       });
