@@ -1,6 +1,7 @@
 import React from "react"
 import { Route } from "react-router-dom"
 
+import { ArticleEditForm } from "./articles/articleEditForm"
 import { ArticleForm } from "./articles/articleForm"
 import { ArticleList } from "./articles/articleList"
 
@@ -21,6 +22,9 @@ export const ApplicationViews = () => {
       </Route>
       <Route path="/articles/create">
         <ArticleForm />
+      </Route>
+      <Route path="/articles/:articleId(\d+)/edit">
+        <ArticleEditForm />
       </Route>
 
       <Route path="/friends">
