@@ -18,4 +18,4 @@ export const ArticleCard = ({ article, handleDeleteArticle }) => {
         </div>
     </div>
     )
-}
+};
