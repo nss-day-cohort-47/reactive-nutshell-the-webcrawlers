@@ -7,6 +7,8 @@ import { addArticle } from '../../data/articlesManager';
 import { getAllUsers } from '../../data/usersManager';
 import './articleForm.css';
 
+// Timestamp details to give the articles a date for the database
+
 export const ArticleForm = () => {
 
     //destructure for useState, which sets a variable and empty array to be used.
@@ -14,7 +16,7 @@ export const ArticleForm = () => {
         title: "",
         synopsis: "",
         url: "",
-        timestamp: "",
+        timestamp: new Date().toLocaleString(),
         userId: 0
     });
 
