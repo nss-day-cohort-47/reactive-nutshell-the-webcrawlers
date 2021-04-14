@@ -39,7 +39,6 @@ export const EventList = () => {
                 </button>
             </section>
 
-
             <div className="container-eventCards">
                 {events.map(event =>
                     <EventCard key={event.id} event={event} handleDeleteEvent={handleDeleteEvent} />)}

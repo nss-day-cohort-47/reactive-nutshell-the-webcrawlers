@@ -12,7 +12,6 @@ import { EventList } from "./events/eventList"
 import { EventForm } from "./events/eventForm"
 import { EventEditForm } from "./events/eventEditForm"
 
-
 export const ApplicationViews = () => {
   return (
     <>
@@ -44,6 +43,7 @@ export const ApplicationViews = () => {
       <Route path="/tasks/create">
         <TaskForm />
       </Route>
+
       <Route path="/events">
         {/* Render the component for the user's events */}
         <EventList />
@@ -54,6 +54,7 @@ export const ApplicationViews = () => {
       <Route path="/events/:eventId(\d+)/edit">
         <EventEditForm />
       </Route>
+      
     </>
   )
 }

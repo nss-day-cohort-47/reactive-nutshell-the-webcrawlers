@@ -80,15 +80,8 @@ export const EventEditForm = () => {
             />
             <label htmlFor="name">Name</label>
 
-            <input
-              type="text"
-              required
-              className="form-control"
-              onChange={handleFieldChange}
-              id="date"
-              value={events.date}
-            />
-            <label htmlFor="date">01/01/2021</label>
+            <label htmlFor="date">Date: </label>
+                <input type="date" id="date" onChange={handleFieldChange} required autoFocus className="form-control" placeholder="event date" value={events.date}/>
 
             <input
               type="text"
