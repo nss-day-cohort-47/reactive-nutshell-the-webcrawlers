@@ -19,15 +19,15 @@ export const deleteFriend = (id) => {
 }
 
 
-// export const addFriends = (newfriends) => {
-//     return fetch(`${remoteURL}/friends/`, {
-//         method: "POST",
-//         headers: {
-//             "Content-Type": "application/json"
-//         },
-//         body: JSON.stringify(newfriends)
-//     }).then(response => response.json())
-// }
+export const addFriends = (newfriends) => {
+    return fetch(`${remoteURL}/friends/`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newfriends)
+    }).then(response => response.json())
+}
 
 // export const updateFriend = (editedfriend) =>{
 //     return fetch(`${remoteURL}/employees/${editedfriend.id}`, {

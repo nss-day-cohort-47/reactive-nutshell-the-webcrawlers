@@ -18,7 +18,7 @@ export const FriendDetail = () => {
     getFriendByUserId(sessionStorage.getItem("nutshell_user"))
       .then(friend => {
         setFriend({
-          name: friend.name
+          name: friend.user.name
         });
         setIsLoading(false);
       });
