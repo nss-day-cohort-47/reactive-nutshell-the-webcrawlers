@@ -1,5 +1,5 @@
 // Authored by: Sidney Crandall
-// Edit Form for users to edit the articles that have posted.
+// Edit Form for users to edit the articles that have been posted.
 
 import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from 'react-router-dom';
@@ -8,6 +8,9 @@ import { getAllUsers } from "../../data/usersManager";
 
 export const ArticleEditForm = () => {
   const [article, setArticle] = useState({});
+
+    // isLoading and setIsLoading are used to hold off click events until
+    // all data fiels are entered. They are set to false initially.  
   const [isLoading, setIsLoading] = useState(false);
 
   const { articleId } = useParams();
@@ -21,7 +24,7 @@ export const ArticleEditForm = () => {
     if (evt.target.id.includes("Id")) {
       selectedVal = parseInt(selectedVal)
     }
-    // look in the animal object copy and find the id of the key we are looking for
+    // look in the article object copy and find the id of the key we are looking for
     stateToChange[evt.target.id] = selectedVal
     setArticle(stateToChange);
   };
@@ -36,12 +39,15 @@ export const ArticleEditForm = () => {
       title: article.title,
       synopsis: article.synopsis,
       url: article.url,
-      timestamp: article.timestamp,
-      userId: article.userId
+      userId: article.userId,
+      timestamp: article.timestamp
     };
 
     const userId = article.userId
-
+    
+    // This function is used to ensure that fieldsets are filled in before proceeding with submission of the edit.
+    // An alert will pop up telling a user to make sure all fields are entered, 
+    // ("/") is used to go back to the dashboard home page.
     if (userId === 0 ) {
       window.alert("Please have all fields filled out")
     } else {
@@ -51,6 +57,7 @@ export const ArticleEditForm = () => {
     }
   }
 
+  // The effect of the state
   useEffect(() => {
     getArticleById(articleId)
       .then(article => {
@@ -66,6 +73,7 @@ export const ArticleEditForm = () => {
       });
   }, []);
 
+  // Fieldset used to Edit articles by title, link, and synopsis.
   return (
     <>
       <form>

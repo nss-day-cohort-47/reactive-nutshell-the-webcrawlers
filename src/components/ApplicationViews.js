@@ -1,6 +1,10 @@
 import React from "react"
 import { Route } from "react-router-dom"
 
+
+
+import { FriendList } from "./friends/FriendList"
+
 import { ArticleEditForm } from "./articles/articleEditForm"
 import { ArticleForm } from "./articles/articleForm"
 import { ArticleList } from "./articles/articleList"
@@ -12,24 +16,30 @@ import { EventList } from "./events/eventList"
 import { EventForm } from "./events/eventForm"
 import { EventEditForm } from "./events/eventEditForm"
 
+
+
 export const ApplicationViews = () => {
   return (
     <>
 
-      <Route exact path="/">
+<Route exact path="/">
         {/* Render the component for news articles */}
+
         <ArticleList />
       </Route>
       <Route path="/articles/create">
         <ArticleForm />
+       main
       </Route>
       <Route path="/articles/:articleId(\d+)/edit">
         <ArticleEditForm />
       </Route>
-
-      <Route path="/friends">
-        {/* Render the component for list of friends */}
+    
+      <Route exact path="/friends">
+        {/* Render the component for list of friends */} 
+        <FriendList />
       </Route>
+
       <Route path="/messages">
         {/* Render the component for the messages */}
       </Route>
