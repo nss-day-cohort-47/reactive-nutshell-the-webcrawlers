@@ -28,7 +28,7 @@ export const TaskCard = ({ task, handleDeleteTask, handleCompleteTask }) => {
             }
             {task.isCompleted === true
              ? ""
-             : <button type="button" onClick={() => handleCompleteTask(task.id)}>Complete</button>
+             : <button type="button" onClick={() => handleCompleteTask(task.isCompleted)}>Complete</button>
             }
             
         </div>

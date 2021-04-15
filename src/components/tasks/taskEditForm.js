@@ -4,6 +4,7 @@
 import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from 'react-router-dom';
 import { updateTask, getTaskById } from "../../data/taskManager";
+import { getAllTasks } from "../../data/taskManager";
 import { getAllUsers } from "../../data/usersManager";
 
 export const TaskEditForm = () => {
@@ -31,6 +32,7 @@ export const TaskEditForm = () => {
         setIsLoading(true);
 
     // This is an edit, so we need the id
+    debugger
     const editedTask = {
       id: taskId,
       name: task.name,
@@ -43,10 +45,10 @@ export const TaskEditForm = () => {
     const userId = task.userId
 
     if (userId === 0 ) {
-      window.alert("Please have all fields filled out")
+      window.alert("Please fill out all fields")
     } else {
       updateTask(editedTask)
-        .then(() => history.push("/tasks")
+        .then(() => history.push("/tasks")  //! Something Here
       )
     }
   }
@@ -91,15 +93,15 @@ export const TaskEditForm = () => {
             />
             <label htmlFor="description">Description</label>
 
-            <input
-              type="text"
+            {/* <input
+              type="date"
               required
               className="form-control"
               onChange={handleFieldChange}
-              id="completion"
+              id="date"
               value={task.completion}
             />
-            <label htmlFor="completion">Completion Date</label>
+            <label htmlFor="completion">Completion Date</label> */}
 
 
             <select

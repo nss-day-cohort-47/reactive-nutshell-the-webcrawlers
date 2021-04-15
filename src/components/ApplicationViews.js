@@ -34,12 +34,12 @@ export const ApplicationViews = () => {
       <Route path="/messages">
         {/* Render the component for the messages */}
       </Route>
-      <Route path="/tasks">
+      <Route exact path="/tasks">
         {/* Render the component for the user's tasks */}
         <h2>Tasks</h2>
-                <section>
-                    <TaskList />
-                </section>
+          <section>
+            <TaskList />
+          </section>
       </Route>
       <Route path="/tasks/create">
         <TaskForm />
