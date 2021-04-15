@@ -21,8 +21,8 @@ export const MessageList = () => {
     // function used to tell the page to grab all the messages and hold on to them.
     const getMessages = () => {
         return getAllMessages()
-            .then(message => {
-                setMessages(message)
+            .then(messagesFromAPI => {
+                setMessages(messagesFromAPI)
             })
     };
 

@@ -15,7 +15,7 @@ export const MessageCard = ({message, handleDeleteMessage}) => {
     return (
         <div className="card">
             <div className="card-content">
-                <small className="card-message">Sender: {message.userId}</small>
+                <small className="card-message">Sender: {message.user?.name}</small>
                     <p>{message.message}</p>
                 <br></br>
                 {/*This is a conditional to deteremine who is viewing the messages*/}
