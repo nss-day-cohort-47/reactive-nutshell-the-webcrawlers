@@ -4,13 +4,10 @@ import { FriendCard } from './friendCard';
 import { getAllFriends, deleteFriend} from '../../data/friendManager';
 // import {handleDeleteFriend} from "./FriendList"
 
-
-
 export const FriendList = () => {
     // The initial state is an empty array
     const [friends, setFriends] = useState([]);
     
-  
     //returns all friend objects and stores in updated state
   const getFriends = () => {
     // After the data comes back from the API, we
@@ -18,18 +15,12 @@ export const FriendList = () => {
     return getAllFriends()
     .then(friendsFromAPI => {
       setFriends(friendsFromAPI)
-     
-      // console.log(friendsFromAPI)
-    //   console.log(setFriends(friendsFromAPI))
     });
   };
-
-// console.log(getFriends())
 
   const handleDeleteFriend = id => {
     deleteFriend(id)
     .then(() => getAllFriends().then(setFriends));
-    //or you could call getFriends() after the => and delete the rest
 };
 
 // console.log(getFriends())
@@ -40,25 +31,26 @@ export const FriendList = () => {
     getFriends();
   }, []);
 
-// console.log(useEffect())
-
-
- 
+const friendCards = () => {
+  // debugger
+  const allFriendCards = friends.map(friend => {
+   if( parseInt(sessionStorage.getItem("nutshell_user")) === friend.currentUserId ){
+    return <FriendCard key={friend.user.id} handleDeleteFriend={handleDeleteFriend} friend={friend}  />
+   }
+   else{
+    return  null 
+   }
+ } )
+ return allFriendCards
+}
 
   // Finally we use .map() to "loop over" the friends array to show a list of friend cards
 return (
  
     <div className="container-cards">
-      {
-      friends.map(friend => 
-      
-      <FriendCard key={friend.id} handleDeleteFriend={handleDeleteFriend} friend={friend}  />
-      )}
+      {friendCards()}
+     
     </div>
   );
       
 };
-
-
-// loggedInUser1={sessionStorage.getItem("nutshell_user")}
-// handleDeleteFriend={handleDeleteFriend}
