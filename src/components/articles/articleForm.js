@@ -31,7 +31,7 @@ export const ArticleForm = () => {
     const history = useHistory();
 
     // click event used for the id of the user.
-    const handleControlledInputChange = (event) => {
+    const handleControlledInputChange = event => {
         const newArticle = { ...article }
         let selectedVal = event.target.value
         if (event.target.id.includes("Id")) {
@@ -53,7 +53,7 @@ export const ArticleForm = () => {
     // click event used to ensure that all 
     // fields are filled in before adding the article to the dashboard
     // userId is invoked in order to pull the data from db 
-    const handleClickSaveArticle = (event) => {
+    const handleClickSaveArticle = event => {
         event.preventDefault()
         const userId = article.userId
         if (userId === 0 ) {

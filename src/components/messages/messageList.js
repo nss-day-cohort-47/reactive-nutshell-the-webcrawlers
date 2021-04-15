@@ -14,10 +14,6 @@ export const MessageList = () => {
     // variable declared to tell where the dom will re-render after an action is taken. 
     const history = useHistory();
 
-    // this varible grabs the logged in users info in order to display the messages.
-    // currentUserId is defined from render function in Nutshell.js which tells the site to render if user is authenticated
-    //const currentUser= JSON.parse(sessionStorage.getItem('nutshell_user'))
-
     // function used to tell the page to grab all the messages and hold on to them.
     const getMessages = () => {
         return getAllMessages()
@@ -50,7 +46,7 @@ export const MessageList = () => {
             <section className="section-content">
                 <button type="button"
                     className="btn"
-                    onClick={() => { history.push("/friends/create") }}>
+                    onClick={() => { history.push("/messages/create") }}>
                     Add a New message
                 </button>
             </section>
