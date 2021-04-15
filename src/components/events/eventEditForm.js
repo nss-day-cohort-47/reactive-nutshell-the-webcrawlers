@@ -45,7 +45,7 @@ export const EventEditForm = () => {
       window.alert("Please have all fields filled out")
     } else {
       updateEvent(editedEvent)
-        .then(() => history.push("/")
+        .then(() => history.push("/events")
       )
     }
   }
