@@ -3,9 +3,9 @@
 
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { addArticle } from '../../data/articlesManager';
+import { addArticle } from '../../data/ArticlesManager';
 import { getAllUsers } from '../../data/usersManager';
-import './articleForm.css';
+import './ArticleForm.css';
 
 // Timestamp details to give the articles a date for the database
 

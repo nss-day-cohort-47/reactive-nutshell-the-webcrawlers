@@ -1,5 +1,5 @@
 import React from "react"
-import "./FriendCard.css"
+//import "./FriendCard.css"
 // import { getFriendByUserId } from "/data/FriendManager"
 // import { Link } from "react-router-dom"
 

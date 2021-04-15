@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 //import the components we will need
-import { FriendCard } from './FriendCard';
-import { getAllFriends, deleteFriend} from '../../data/FriendManager';
+import { FriendCard } from './friendCard';
+import { getAllFriends, deleteFriend} from '../../data/friendManager';
 // import {handleDeleteFriend} from "./FriendList"
 
 

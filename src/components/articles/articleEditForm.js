@@ -3,7 +3,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from 'react-router-dom';
-import { updateArticle, getArticleById } from "../../data/articlesManager";
+import { updateArticle, getArticleById } from "../../data/ArticlesManager";
 import { getAllUsers } from "../../data/usersManager";
 
 export const ArticleEditForm = () => {
