@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { addTask } from '../../data/taskManager';
 import { getAllUsers } from '../../data/usersManager';
+import { getAllTasks } from '../../data/taskManager';
 import './taskForm.css';
 
 export const TaskForm = () => {
@@ -9,6 +10,7 @@ export const TaskForm = () => {
         name: "",
         description: "",
         completion: "",
+        isCompleted: false,
         userId: 0
     });
 
@@ -45,7 +47,7 @@ export const TaskForm = () => {
         }
         else {
             addTask(task)
-                .then(() => history.push("/tasks"))
+                .then(() => history.push("/tasks")) //! Something Here
         }
     }
 
@@ -70,7 +72,7 @@ export const TaskForm = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="completion">Completion: </label>
-                    <input type="text" id="completion" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="01/01/2020" value={task.completion} />
+                    <input type="date" id="completion" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Task Date" value={task.completion} />
                 </div>
             </fieldset>
 
