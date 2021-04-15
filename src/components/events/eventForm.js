@@ -41,7 +41,7 @@ export const EventForm = () => {
         setIsLoading(false)
 }, []);
 
-    const handleClickSaveArticle = (event) => {
+    const handleClickSaveEvent = (event) => {
         event.preventDefault()
 
         const userId = events.userId
@@ -96,7 +96,7 @@ export const EventForm = () => {
             </fieldset>
 
             <button className="btn btn-primary"
-                onClick={handleClickSaveArticle} disabled={isLoading}>
+                onClick={handleClickSaveEvent} disabled={isLoading}>
                 Save Event
             </button>
         </form>

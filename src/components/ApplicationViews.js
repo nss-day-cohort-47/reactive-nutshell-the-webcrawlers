@@ -44,7 +44,7 @@ export const ApplicationViews = () => {
         <TaskForm />
       </Route>
 
-      <Route path="/events">
+      <Route exact path="/events">
         {/* Render the component for the user's events */}
         <EventList />
       </Route>

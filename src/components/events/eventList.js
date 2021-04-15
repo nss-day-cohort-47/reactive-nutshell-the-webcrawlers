@@ -30,7 +30,6 @@ export const EventList = () => {
 
     return (
         <>
-
             <section className="event-section-content">
                 <button type="button"
                     className="btn"
