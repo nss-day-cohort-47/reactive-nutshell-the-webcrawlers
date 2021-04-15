@@ -1,4 +1,4 @@
-// Adapted by: Salma Crank
+// Authored by: Salma Crank
 // Edit Form for users to edit the articles that have posted.
 
 import React, { useState, useEffect } from "react";
@@ -45,7 +45,7 @@ export const EventEditForm = () => {
       window.alert("Please have all fields filled out")
     } else {
       updateEvent(editedEvent)
-        .then(() => history.push("/")
+        .then(() => history.push("/events")
       )
     }
   }
@@ -80,15 +80,8 @@ export const EventEditForm = () => {
             />
             <label htmlFor="name">Name</label>
 
-            <input
-              type="text"
-              required
-              className="form-control"
-              onChange={handleFieldChange}
-              id="date"
-              value={events.date}
-            />
-            <label htmlFor="date">01/01/2021</label>
+            <label htmlFor="date">Date: </label>
+                <input type="date" id="date" onChange={handleFieldChange} required autoFocus className="form-control" placeholder="event date" value={events.date}/>
 
             <input
               type="text"

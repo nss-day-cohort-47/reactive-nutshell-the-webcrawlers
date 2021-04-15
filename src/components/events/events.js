@@ -1,3 +1,6 @@
+//Authored by Salma Crank
+//
+
 import React from "react"
 import "./events.css"
 import { useHistory } from "react-router-dom"
