@@ -3,7 +3,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from 'react-router-dom';
-import { updateArticle, getArticleById } from "../../data/articlesManager";
+import { updateArticle, getArticleById } from "../../data/ArticlesManager";
 import { getAllUsers } from "../../data/usersManager";
 
 export const ArticleEditForm = () => {
@@ -52,8 +52,7 @@ export const ArticleEditForm = () => {
       window.alert("Please have all fields filled out")
     } else {
       updateArticle(editedArticle)
-        .then(() => history.push("/")
-      )
+        .then(() => history.push("/"))
     }
   }
 
@@ -108,7 +107,6 @@ export const ArticleEditForm = () => {
               value={article.url}
             />
             <label htmlFor="url">Link</label>
-
 
             <select
               value={article.userId}
