@@ -1,62 +1,64 @@
-// Authored by: Salma Crank
-// Edit Form for users to edit the articles that have posted.
+// Authored by: Sidney Crandall
+// Edit Form for users to edit the tasks that have posted.
 
 import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from 'react-router-dom';
-import { updateEvent, getEventById } from "../../data/eventManager";
+import { updateTask, getTaskById } from "../../data/taskManager";
+import { getAllTasks } from "../../data/taskManager";
 import { getAllUsers } from "../../data/usersManager";
 
-export const EventEditForm = () => {
-  const [events, setEvent] = useState({});
+export const TaskEditForm = () => {
+  const [task, setTask] = useState({});
   const [isLoading, setIsLoading] = useState(false);
 
-  const { eventId } = useParams();
+  const { taskId } = useParams();
   const history = useHistory();
 
   const [users, setUsers] = useState([]);
 
   const handleFieldChange = evt => {
-    const stateToChange = { ...events };
+    const stateToChange = { ...task };
     let selectedVal = evt.target.value
     if (evt.target.id.includes("Id")) {
       selectedVal = parseInt(selectedVal)
     }
     // look in the animal object copy and find the id of the key we are looking for
     stateToChange[evt.target.id] = selectedVal
-    setEvent(stateToChange);
+    setTask(stateToChange);
   };
 
-  const updateExistingEvent = evt => {
+  const updateExistingTask = evt => {
     evt.preventDefault()
         setIsLoading(true);
 
     // This is an edit, so we need the id
-    const editedEvent = {
-      id: eventId,
-      name: events.name,
-      date: events.date,
-      location: events.location,
-      userId: events.userId
+    debugger
+    const editedTask = {
+      id: taskId,
+      name: task.name,
+      description: task.description,
+      completion: task.completion,
+      userId: task.userId
     };
 
-    const userId = events.userId
+    const userId = task.userId
 
     if (userId === 0 ) {
-      window.alert("Please have all fields filled out")
+      window.alert("Please fill out all fields")
     } else {
-      updateEvent(editedEvent)
-        .then(() => history.push("/events")
+      updateTask(editedTask)
+        .then(() => history.push("/tasks")  //! Something Here
       )
     }
   }
 
   useEffect(() => {
-    getEventById(eventId)
-      .then(events => {
-        setEvent(events);
+    getTaskById(taskId)
+      .then(task => {
+        setTask(task);
             setIsLoading(false);
       });
-  }, [eventId]);
+  }, [taskId]);
 
   useEffect(() => {
     getAllUsers()
@@ -76,26 +78,34 @@ export const EventEditForm = () => {
               className="form-control"
               onChange={handleFieldChange}
               id="name"
-              value={events.name}
+              value={task.name}
             />
-            <label htmlFor="name">Name</label>
-
-            <label htmlFor="date">Date: </label>
-                <input type="date" id="date" onChange={handleFieldChange} required autoFocus className="form-control" placeholder="event date" value={events.date}/>
+            <label htmlFor="name">Task Name</label>
 
             <input
               type="text"
               required
               className="form-control"
               onChange={handleFieldChange}
-              id="location"
-              value={events.location}
+              id="description"
+              value={task.description}
             />
-            <label htmlFor="location">Location</label>
+            <label htmlFor="description">Description</label>
+
+            {/* DATE EDITING */}
+            <input
+              type="date"
+              required
+              className="form-control"
+              onChange={handleFieldChange}
+              id="completion"
+              value={task.completion}
+            />
+            <label htmlFor="completion">Completion Goal</label>
 
 
-            <select
-              value={events.userId}
+            {/* <select
+              value={task.userId}
               name="userId"
               id="userId"
               onChange={handleFieldChange}
@@ -107,15 +117,15 @@ export const EventEditForm = () => {
                 </option>
               ))}
             </select>
-            <label htmlFor="user">Posted By: </label>
+            <label htmlFor="user">Task Posted By: </label> */}
 
           </div>
           <div className="alignRight">
             <button
               type="button" disabled={isLoading}
-              onClick={updateExistingEvent}
+              onClick={updateExistingTask}
               className="btn btn-primary"
-            >Submit</button>
+            >Save</button>
           </div>
         </fieldset>
       </form>

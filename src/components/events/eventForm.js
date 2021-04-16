@@ -1,12 +1,12 @@
+//Authored by Salma Crank
 //
-//
-
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { addEvent } from '../../data/eventManager';
 import { getAllUsers } from '../../data/usersManager';
 import './eventForm.css';
-
+// import  DatePicker  from 'react-datepicker'
+// import "react-datepicker/dist/react-datepicker.css";
 
 export const EventForm = () => {
     const [events, setEvent] = useState({
@@ -15,6 +15,8 @@ export const EventForm = () => {
         location: "",
         userId: 0
     });
+
+    // const [startDate, setStartDate] = useState(new Date());
 
     const [isLoading, setIsLoading] = useState(false);
     const [users,  setUsers] = useState([]);
@@ -39,7 +41,7 @@ export const EventForm = () => {
         setIsLoading(false)
 }, []);
 
-    const handleClickSaveArticle = (event) => {
+    const handleClickSaveEvent = (event) => {
         event.preventDefault()
 
         const userId = events.userId
@@ -53,34 +55,35 @@ export const EventForm = () => {
         }
     }
 
+
     return (
         <form className="eventForm">
             <h2 className="eventFrom_title">New Events</h2>
 
             <fieldset>
             <div className="form-group">
-                    <label htmlFor="synopsis">Name: </label>
+                    <label htmlFor="name">Name: </label>
                     <input type="text" id="name" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="event name" value={events.name} />
                 </div>
             </fieldset>
 
             <fieldset>
-                <div className="form-group">
-                    <label htmlFor="synopsis">Date: </label>
-                    <input type="text" id="date" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="event date" value={events.date} />
-                </div>
+            <div>
+            <label htmlFor="date">Date: </label>
+                <input type="date" id="date" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="event date" value={events.date}/>
+              </div>
             </fieldset>
 
             <fieldset>
             <div className="form-group">
-                    <label htmlFor="synopsis">Location: </label>
+                    <label htmlFor="location">Location: </label>
                     <input type="text" id="location" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="event location" value={events.location} />
                 </div>
             </fieldset>
 
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="user">Posted By: </label>
+                    <label htmlFor="userId">Posted By: </label>
                     <select value={events.userId} name="userId" id="userId" onChange={handleControlledInputChange} className="form-control">
                         <option value="0">Select User</option>
                         {users.map(u => (
@@ -93,7 +96,7 @@ export const EventForm = () => {
             </fieldset>
 
             <button className="btn btn-primary"
-                onClick={handleClickSaveArticle} disabled={isLoading}>
+                onClick={handleClickSaveEvent} disabled={isLoading}>
                 Save Event
             </button>
         </form>
