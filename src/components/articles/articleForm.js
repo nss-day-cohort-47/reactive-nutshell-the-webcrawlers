@@ -25,7 +25,7 @@ export const ArticleForm = () => {
     const [isLoading, setIsLoading] = useState(false);
 
     // props used to identify the creator of the article.
-    const [users,  setUsers] = useState([]);
+    const [users, setUsers] = useState([]);
 
     // react native to render the previous page after an action.
     const history = useHistory();
@@ -38,17 +38,8 @@ export const ArticleForm = () => {
             selectedVal = parseInt(selectedVal)
         }
         newArticle[event.target.id] = selectedVal
-            setArticle(newArticle)
+        setArticle(newArticle)
     }
-
-    //gathers the users array for the db and parses thru it for form input
-    useEffect(() => {
-        getAllUsers()
-            .then(usersFromAPI => {
-                setUsers(usersFromAPI)
-        });
-        setIsLoading(false)
-}, []);
 
     // click event used to ensure that all 
     // fields are filled in before adding the article to the dashboard
@@ -56,7 +47,7 @@ export const ArticleForm = () => {
     const handleClickSaveArticle = event => {
         event.preventDefault()
         const userId = article.userId
-        if (userId === 0 ) {
+        if (userId === 0) {
             window.alert("Please fill out all fields.")
         }
         else {
@@ -64,6 +55,15 @@ export const ArticleForm = () => {
                 .then(() => history.push("/"))
         }
     }
+
+    //gathers the users array for the db and parses thru it for form input
+    useEffect(() => {
+        getAllUsers()
+            .then(usersFromAPI => {
+                setUsers(usersFromAPI)
+            });
+        setIsLoading(false)
+    }, []);
 
     // fieldset form to add new Articles to the dashboard
     return (

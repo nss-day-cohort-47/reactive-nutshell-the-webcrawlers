@@ -33,7 +33,7 @@ export const MessageList = () => {
     // This is telling the DOM what to do with the messages that were gathered from above.
     useEffect(() => {
         getMessages()
-    }, [messages])
+    }, [])
 
     // return the messages to the DOM. Map through the db and give us the messages
     return (

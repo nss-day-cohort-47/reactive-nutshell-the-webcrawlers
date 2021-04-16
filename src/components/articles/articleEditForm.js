@@ -52,8 +52,7 @@ export const ArticleEditForm = () => {
       window.alert("Please have all fields filled out")
     } else {
       updateArticle(editedArticle)
-        .then(() => history.push("/")
-      )
+        .then(() => history.push("/"))
     }
   }
 
@@ -108,7 +107,6 @@ export const ArticleEditForm = () => {
               value={article.url}
             />
             <label htmlFor="url">Link</label>
-
 
             <select
               value={article.userId}

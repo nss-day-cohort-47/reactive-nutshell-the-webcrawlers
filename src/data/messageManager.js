@@ -12,8 +12,8 @@ export const deleteMessage = (id) => {
     }).then(result => result.json())
 }
 
-export const getMessageByUser = (id) => {
-    return fetch(`${remoteURL}/messages/${id}?_expand=user`)
+export const getMessageById = (id) => {
+    return fetch(`${remoteURL}/messages/${id}`)
         .then(res => res.json())
 }
 
@@ -27,12 +27,12 @@ export const addMessage = (newMessage) => {
     }).then(response => response.json())
 }
 
-/*export const updateMessage = (editedMeassage) => {
-    return fetch(`${remoteURL}/messages/${editedMeassage.id}`, {
+export const updateMessage  = (editedMessage) => {
+    return fetch(`${remoteURL}/messages/${editedMessage.id}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(editedMessage)
     }).then(data => data.json());
-}*/
+}
