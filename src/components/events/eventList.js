@@ -5,6 +5,7 @@ import React, { useState, useEffect } from "react";
 import { EventCard } from "./events";
 import { deleteEvent, getAllEvents } from "../../data/eventManager";
 import { useHistory } from "react-router-dom";
+import { EventSpotlight } from "./eventSpotlight"
 
 export const EventList = () => {
   const [events, setEvents] = useState([]);
