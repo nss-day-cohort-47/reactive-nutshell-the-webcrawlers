@@ -7,6 +7,8 @@ export const TaskList = () => {
     const [Tasks, setTasks] = useState([]);
 
     const history = useHistory();
+    
+    const currentUser = JSON.parse(sessionStorage.getItem("nutshell_user"))
 
     const getTasks = () => {
        return getAllTasks()
@@ -21,8 +23,21 @@ export const TaskList = () => {
                 .then(setTasks))
     };
 
-    const handleCompleteTask = (id => {
-        updateTask(id)
+    const handleCompleteTask = (task => {
+        //? copy task infoirmation
+        let incompleteTask = {...task}
+        //? takes information and changes the keys
+        const completeTask = {
+            id: incompleteTask.id,
+            userId: currentUser,
+            name: incompleteTask.name,
+            description: incompleteTask.description,
+            isCompleted: true
+        }
+        console.log(completeTask)
+        //? updates the task
+        updateTask(completeTask)
+        //? resets the state
         .then(()=> getAllTasks()
             .then(setTasks))
     })
