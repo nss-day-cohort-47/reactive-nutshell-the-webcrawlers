@@ -38,7 +38,6 @@ export const TaskEditForm = () => {
       name: task.name,
       description: task.description,
       completion: task.completion,
-      isCompleted: task.isCompleted,
       userId: task.userId
     };
 
@@ -93,18 +92,19 @@ export const TaskEditForm = () => {
             />
             <label htmlFor="description">Description</label>
 
-            {/* <input
+            {/* DATE EDITING */}
+            <input
               type="date"
               required
               className="form-control"
               onChange={handleFieldChange}
-              id="date"
+              id="completion"
               value={task.completion}
             />
-            <label htmlFor="completion">Completion Date</label> */}
+            <label htmlFor="completion">Completion Goal</label>
 
 
-            <select
+            {/* <select
               value={task.userId}
               name="userId"
               id="userId"
@@ -117,7 +117,7 @@ export const TaskEditForm = () => {
                 </option>
               ))}
             </select>
-            <label htmlFor="user">Task Posted By: </label>
+            <label htmlFor="user">Task Posted By: </label> */}
 
           </div>
           <div className="alignRight">
