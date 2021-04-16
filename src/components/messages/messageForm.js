@@ -41,8 +41,8 @@ export const MessageForm = () => {
     // save event to capture the changes from above and place them in the db
     const handleClickSaveMesage = (event) => {
         event.preventDefault()
-        const receiverId = message.receiverId
-        if (receiverId === 0) {
+        const recipientId = message.recipientId
+        if (recipientId === 0) {
             window.alert("Please choose a Friend")
         } else {
             addMessage(message)

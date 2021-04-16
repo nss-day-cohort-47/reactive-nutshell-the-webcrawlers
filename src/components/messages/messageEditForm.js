@@ -39,10 +39,11 @@ export const MessageEditForm = () => {
 
     //argument passed in fetch call called in to edit the db   
     const editedMessage = {
-        id: messageId.id,
+        id: messageId,
         message: message.message,
         userId: message.userId,
-        recipientId: message.recipientId
+        recipientId: message.recipientId,
+        timestamp: message.timestamp
     };
 
     // after the message is updated re-render to the list without refresh
