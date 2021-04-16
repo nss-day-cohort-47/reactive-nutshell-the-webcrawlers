@@ -1,5 +1,5 @@
 import React from "react";
-import "./article.css"
+import "./Article.css"
 import { useHistory } from "react-router-dom";
 
 // Single card render for one Article. it is how it will render on the dashboard,

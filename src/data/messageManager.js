@@ -13,7 +13,7 @@ export const deleteMessage = (id) => {
 }
 
 export const getMessageById = (id) => {
-    return fetch(`${remoteURL}/messages/${id}?_expand=user`)
+    return fetch(`${remoteURL}/messages/${id}`)
         .then(res => res.json())
 }
 
@@ -27,12 +27,17 @@ export const addMessage = (newMessage) => {
     }).then(response => response.json())
 }
 
-export const updateMessage = (editedMeassage) => {
-    return fetch(`${remoteURL}/messages/${editedMeassage.id}`, {
+export const updateMessage  = (editedMessage) => {
+    return fetch(`${remoteURL}/messages/${editedMessage.id}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(editedMessage)
     }).then(data => data.json());
+}
+
+export const getMessageByUser = (userId) => {
+    return fetch(`${remoteURL}/messages/?userId=${userId}&_expand=user`)
+        .then(res => res.json())
 }
