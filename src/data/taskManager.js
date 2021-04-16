@@ -30,6 +30,16 @@ export const updateTask = (editedTask) =>{
     }).then(data => data.json())
 }
 
+export const updateCompleteTask = (editedTask) =>{
+    return fetch(`${remoteURL}/tasks/${editedTask.isCompleted}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(editedTask)
+    }).then(data => data.json())
+}
+
 export const deleteTask = (id) => {
     return fetch(`${remoteURL}/tasks/${id}`, {
         method: "DELETE"

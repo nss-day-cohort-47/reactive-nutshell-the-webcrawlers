@@ -6,13 +6,15 @@ import { getAllTasks } from '../../data/taskManager';
 import './taskForm.css';
 
 export const TaskForm = () => {
+    const currentUser = JSON.parse(sessionStorage.getItem("nutshell_user"))
     const [task, setTask] = useState({
         name: "",
         description: "",
         completion: "",
         isCompleted: false,
-        userId: 0
+        userId: currentUser
     });
+
 
     const [isLoading, setIsLoading] = useState(false);
     const [users,  setUsers] = useState([]);
@@ -76,7 +78,7 @@ export const TaskForm = () => {
                 </div>
             </fieldset>
 
-            <fieldset>
+            {/* <fieldset>
                 <div className="form-group">
                     <label htmlFor="user">Posted By: </label>
                     <select value={task.userId} name="userId" id="userId" onChange={handleControlledInputChange} className="form-control">
@@ -88,7 +90,7 @@ export const TaskForm = () => {
                         ))}
                     </select>
                 </div>
-            </fieldset>
+            </fieldset> */}
 
             <button className="btn btn-primary"
                 onClick={handleClickSaveTask} disabled={isLoading}>
