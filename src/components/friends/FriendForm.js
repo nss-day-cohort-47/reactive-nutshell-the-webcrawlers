@@ -33,7 +33,7 @@ export const FriendForm = () => {
         setIsLoading(false)
 }, []);
 
-    const handleClickSavefriend = (event) => {
+    const handleClickSaveFriend = (event) => {
         event.preventDefault()
 
         const userId = friend.userId
@@ -87,7 +87,7 @@ export const FriendForm = () => {
             </fieldset>
 
             <button className="btn btn-primary"
-                onClick={handleClickSavefriend} disabled={isLoading}>
+                onClick={handleClickSaveFriend} disabled={isLoading}>
                 Save friend
             </button>
         </form>

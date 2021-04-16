@@ -8,8 +8,10 @@ export const getAllUsers = () => {
     .then(res => res.json())
 }
 
+
+
+
 export const getUserById = (id) => {
     //gets the user by a specific ID
     return fetch (`${remoteURL}/users/${id}`)
 }
-
