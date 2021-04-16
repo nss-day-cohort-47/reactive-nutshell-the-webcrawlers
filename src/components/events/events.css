@@ -1,1 +1,10 @@
 /* Authored by Salma Crank */
+
+.upcomingEvent_Card h3 {
+    color: tomato;
+    font-size: larger;
+}
+
+.upcomingEvent_Card p {
+    font-weight: 300;
+}

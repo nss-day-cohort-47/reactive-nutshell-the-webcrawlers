@@ -45,20 +45,3 @@ export const deleteEvent = (id) => {
     method: "DELETE"
   }).then(result => result.json())
 }
-
-// let eventDate = [];
-
-// export const getEventDates = (date) => {
-//   return fetch (`${remoteURL}/events/${date}`)
-//   .then(response => response.json())
-//   .then((parsedResponse) => {
-//     eventDate = parsedResponse.data
-//       return parsedResponse.data;
-//   });
-// };
-
-// export const useEventDates = () => {
-//   return [...eventDate]
-// }
-
-// console.log(getEventDates)

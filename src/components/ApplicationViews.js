@@ -64,8 +64,8 @@ export const ApplicationViews = () => {
       <Route path="/tasks/:taskId(\d+)/edit">
         <TaskEditForm />
       </Route>
+     
       <Route exact path="/events">
-
         {/* Render the component for the user's events */}
         <EventList />
       </Route>

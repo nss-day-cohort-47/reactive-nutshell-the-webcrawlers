@@ -6,6 +6,7 @@ import { EventCard } from "./events";
 import { deleteEvent, getAllEvents } from "../../data/eventManager";
 import { useHistory } from "react-router-dom";
 
+
 export const EventList = () => {
   const [events, setEvents] = useState([]);
 
@@ -13,8 +14,9 @@ export const EventList = () => {
 
   const getEvents = () => {
     return getAllEvents().then((eventsFromAPI) => {
+//here is where we declare a variable which stores the current date in the same format as the date data in our json file. 
       const currentDate = new Date().toISOString().split("T")[0];
-
+//this filters the events by date so they are shown chronologically. 
      const filteredEvents = eventsFromAPI
         .filter((event) => event.date >= currentDate)
         .sort((a, b) => {
@@ -54,11 +56,12 @@ export const EventList = () => {
       </section>
 
       <div className="container-eventCards">
-        {events.map((event) => (
+        {events.map((event, index) => (
           <EventCard
             key={event.id}
             event={event}
             handleDeleteEvent={handleDeleteEvent}
+            index={index}
           />
         ))}
       </div>
