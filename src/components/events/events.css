@@ -1,10 +1,65 @@
 /* Authored by Salma Crank */
-
-.upcomingEvent_Card h3 {
-    color: tomato;
+.upcomingEvent_CardName {
+    color: #667394;
     font-size: larger;
 }
 
-.upcomingEvent_Card p {
+.upcomingEvent_CardContent p {
     font-weight: 300;
 }
+
+.upcomingEvent_Card {
+    border-color: #667394;
+    margin: 30px; 
+    padding: .5em;
+    width: 75%;
+    background-color: #f1dfc5;
+}
+
+.eventCard {
+    border-color: #667394;
+    margin: 30px; 
+    padding: .5em;
+    width: 50%;
+    background-color: #f1dfc5;
+    display: flex;
+    
+}
+
+.eventButtons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.editButton {
+    background-color: #667394; 
+    color: white;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 10px;
+    border-style: none;
+}
+
+.deleteButton {
+    background-color: #667394; 
+    color: white;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 10px;
+    border-style: none;
+}
+
+/*button {
+        background-color: #667394; 
+        color: white;
+        padding: 5px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+      }
+*/
