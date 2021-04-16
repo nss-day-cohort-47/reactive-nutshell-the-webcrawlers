@@ -32,6 +32,7 @@ export const TaskList = () => {
             userId: currentUser,
             name: incompleteTask.name,
             description: incompleteTask.description,
+            completion: incompleteTask.completion,
             isCompleted: true
         }
         console.log(completeTask)

@@ -23,17 +23,17 @@ export const TaskCard = ({ task, handleDeleteTask, handleCompleteTask }) => {
              ? ""
              :<p>Completion Goal: {task.completion}</p>
             }
-            {task.isCompleted === true
-             ? ""
-             : <button type="button" onClick={() => history.push(`/tasks/${task.id}/edit`)}> Edit </button>
+            {task.userId === currentUser && task.isCompleted === false
+             ? <button type="button" onClick={() => history.push(`/tasks/${task.id}/edit`)}> Edit </button>
+             : ""
             }
-            {task.isCompleted === true
-             ? ""
-             : <button type="button" onClick={() => handleDeleteTask(task.id)}>Delete</button>
+            {task.userId === currentUser
+             ? <button type="button" onClick={() => handleDeleteTask(task.id)}>Delete</button>
+             : ""
             }
-            {task.isCompleted === true 
-             ? ""
-             : <button type="button" onClick={() => handleCompleteTask(task)}>Complete</button>
+            {task.userId === currentUser && task.isCompleted === false
+             ? <button type="button" onClick={() => handleCompleteTask(task)}>Complete</button>
+             : ""
             }
         </div>
     </div>

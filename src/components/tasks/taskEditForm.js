@@ -92,9 +92,7 @@ export const TaskEditForm = () => {
             />
             <label htmlFor="description">Description</label>
 
-            //! DATE EDITING
-
-
+            {/* DATE EDITING */}
             <input
               type="date"
               required
@@ -106,7 +104,7 @@ export const TaskEditForm = () => {
             <label htmlFor="completion">Completion Goal</label>
 
 
-            <select
+            {/* <select
               value={task.userId}
               name="userId"
               id="userId"
@@ -119,7 +117,7 @@ export const TaskEditForm = () => {
                 </option>
               ))}
             </select>
-            <label htmlFor="user">Task Posted By: </label>
+            <label htmlFor="user">Task Posted By: </label> */}
 
           </div>
           <div className="alignRight">
