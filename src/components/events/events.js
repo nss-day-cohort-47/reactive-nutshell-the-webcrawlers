@@ -9,7 +9,7 @@ import { useHistory } from "react-router-dom"
 
 export const EventCard = ({ event, handleDeleteEvent, index }) => {
     const history = useHistory();
-// debugger
+//if statement which will prominently display the recent upcoming event. 
 if (index === 0){
   return (
     <div className="eventCard">
@@ -19,6 +19,7 @@ if (index === 0){
         </span></h3>
         <p>Date: {event.date}</p>
         <p>Location: {event.location}</p>
+        {/* <p>Posted By: {event.userId}</p> */}
         <button type="button" onClick={() => history.push(`/events/${event.id}/edit`)}> Edit </button>
           <button type="button" onClick={() => handleDeleteEvent(event.id)}>DELETE</button>
       </div>
@@ -34,6 +35,7 @@ else {
           </span></h3>
           <p>Date: {event.date}</p>
           <p>Location: {event.location}</p>
+          {/* <p>Posted By: {event.userId}</p> */}
           <button type="button" onClick={() => history.push(`/events/${event.id}/edit`)}> Edit </button>
             <button type="button" onClick={() => handleDeleteEvent(event.id)}>DELETE</button>
         </div>

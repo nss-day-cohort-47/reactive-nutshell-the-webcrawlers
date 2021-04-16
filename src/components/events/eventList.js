@@ -14,8 +14,9 @@ export const EventList = () => {
 
   const getEvents = () => {
     return getAllEvents().then((eventsFromAPI) => {
+//here is where we declare a variable which stores the current date in the same format as the date data in our json file. 
       const currentDate = new Date().toISOString().split("T")[0];
-
+//this filters the events by date so they are shown chronologically. 
      const filteredEvents = eventsFromAPI
         .filter((event) => event.date >= currentDate)
         .sort((a, b) => {
