@@ -36,3 +36,8 @@ export const updateMessage  = (editedMessage) => {
         body: JSON.stringify(editedMessage)
     }).then(data => data.json());
 }
+
+export const getMessageByUser = (userId) => {
+    return fetch(`${remoteURL}/messages/?userId=${userId}&_expand=user`)
+        .then(res => res.json())
+}
