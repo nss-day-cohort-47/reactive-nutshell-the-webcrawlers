@@ -10,13 +10,6 @@ export const getEventById = (id) => {
   .then(res => res.json())
 }
 
-export const getEventByDate = (date) => {
-  //fetch call to grab tasks by their Id. 
-  return fetch(`${remoteURL}/events/${date}?_expand=`)
-  .then(res => res.json())
-}
-
-
 export const getAllEvents = () => {
   //fetch call that displays all of the tasks. 
   return fetch(`${remoteURL}/events/?_expand=`)
@@ -52,20 +45,3 @@ export const deleteEvent = (id) => {
     method: "DELETE"
   }).then(result => result.json())
 }
-
-// let eventDate = [];
-
-// export const getEventDates = (date) => {
-//   return fetch (`${remoteURL}/events/${date}`)
-//   .then(response => response.json())
-//   .then((parsedResponse) => {
-//     eventDate = parsedResponse.data
-//       return parsedResponse.data;
-//   });
-// };
-
-// export const useEventDates = () => {
-//   return [...eventDate]
-// }
-
-// console.log(getEventDates)

@@ -4,11 +4,28 @@
 import React from "react"
 import "./events.css"
 import { useHistory } from "react-router-dom"
+
 //import { Link } from "react-router-dom"
 
-export const EventCard = ({ event, handleDeleteEvent }) => {
-
+export const EventCard = ({ event, handleDeleteEvent, index }) => {
     const history = useHistory();
+// debugger
+if (index === 0){
+  return (
+    <div className="eventCard">
+      <div className="upcomingEvent_Card">
+        <h3><span className="upcomingEvent_Card">
+          {event.name}
+        </span></h3>
+        <p>Date: {event.date}</p>
+        <p>Location: {event.location}</p>
+        <button type="button" onClick={() => history.push(`/events/${event.id}/edit`)}> Edit </button>
+          <button type="button" onClick={() => handleDeleteEvent(event.id)}>DELETE</button>
+      </div>
+    </div>
+  );
+}
+else {
     return (
       <div className="eventCard">
         <div className="eventCard-content">
@@ -22,6 +39,7 @@ export const EventCard = ({ event, handleDeleteEvent }) => {
         </div>
       </div>
     );
+  }
 }
 
 
