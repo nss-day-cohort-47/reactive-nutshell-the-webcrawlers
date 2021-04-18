@@ -4,9 +4,9 @@ import { Route } from "react-router-dom"
 import { FriendList } from "./friends/FriendList"
 import { FriendForm } from "./friends/FriendForm"
 
-import { ArticleEditForm } from "./articles/ArticleEditForm"
-import { ArticleForm } from "./articles/ArticleForm"
-import { ArticleList } from "./articles/ArticleList"
+import { ArticleEditForm } from "./articles/articleEditForm"
+import { ArticleForm } from "./articles/articleForm"
+import { ArticleList } from "./articles/articleList"
 
 import { TaskList } from "./tasks/taskList"
 import { TaskForm } from "./tasks/taskForm"
@@ -26,13 +26,12 @@ export const ApplicationViews = () => {
   return (
     <>
 
-        {/* Render the component for news articles */}
+      {/* Render the component for news articles */}
       <Route exact path="/">
         <ArticleList />
       </Route>
       <Route path="/articles/create">
         <ArticleForm />
-       main
       </Route>
       <Route path="/articles/:articleId(\d+)/edit">
         <ArticleEditForm />
@@ -51,7 +50,7 @@ export const ApplicationViews = () => {
 
 
 
-        {/* Render the component for the messages */}
+      {/* Render the component for the messages */}
       <Route exact path="/messages">
         <MessageList />
       </Route>

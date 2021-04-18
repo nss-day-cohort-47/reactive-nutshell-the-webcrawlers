@@ -18,17 +18,17 @@ export const ArticleCard = ({ article, handleDeleteArticle }) => {
             <h3>Headline: <span className="card-articleName">{article.title}</span></h3>
             <p>Synopsis: {article.synopsis}</p>
             <p><a href={article.url}>Link: {article.url}</a></p>
-            <p>Posted by: {article.userId?.name}</p>
               {article.userId === currentUser ? 
                 <>
                     <button type="button" onClick={() => history.push(`/articles/${article.id}/edit`)}> Edit </button>
                     <button type="button" onClick={() => handleDeleteArticle(article.id)}>DELETE</button>
                 </>
                 : null
-                }
+            }
         </div>
     </div>
     )
 };
+
 
 //<p>Posted by: {article.userId.name}</p>

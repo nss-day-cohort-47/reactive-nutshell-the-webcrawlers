@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { ArticleCard } from './ArticleCard'
-import { deleteArticle, getAllArticles } from '../../data/ArticlesManager'
+import { ArticleCard } from './articleCard'
+import { deleteArticle, getAllArticles } from '../../data/articlesManager'
 import { useHistory } from 'react-router-dom';
 
 export const ArticleList = () => {
