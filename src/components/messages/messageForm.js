@@ -4,7 +4,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { getAllUsers } from '../../data/usersManager';
-import { addMessage } from '../../data/MessageManager';
+import { addMessage } from '../../data/messageManager';
 
 //function used to export a form 
 
