@@ -3,7 +3,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
-import { getMessageById, updateMessage } from '../../data/MessageManager';
+import { getMessageById, updateMessage } from '../../data/messageManager';
 
 
 export const MessageEditForm = () => {

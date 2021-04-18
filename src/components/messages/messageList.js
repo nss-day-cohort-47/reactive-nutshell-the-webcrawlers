@@ -3,8 +3,8 @@
 
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { deleteMessage, getAllMessages } from '../../data/MessageManager';
-import { MessageCard } from './MessageCard';
+import { deleteMessage, getAllMessages } from '../../data/messageManager';
+import { MessageCard } from './messageCard';
 
 export const MessageList = () => {
 
