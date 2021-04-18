@@ -15,13 +15,12 @@ export const MessageCard = ({message, handleDeleteMessage}) => {
     return (
         <div className="card">
             <div className="card-content">
-                <small className="card-message">Sender: {message.user?.name}</small>
+                <p className="card-message">Sender: {message.user?.name}</p>
                     <p>{message.message}</p>
-                <br></br>
                 {/*This is a conditional to deteremine who is viewing the messages*/}
                     {message.userId === currentUser ? 
                 <>
-                    <button type="button" onClick={() => history.push(`/messages/${message.id}/edit`)}> Edit </button>
+                    <button type="button" onClick={() => history.push(`/messages/${message.id}/edit`)}> EDIT </button>
                     <button type="button" onClick={() => handleDeleteMessage(message.id)}>DELETE</button>
                 </>
                 : null

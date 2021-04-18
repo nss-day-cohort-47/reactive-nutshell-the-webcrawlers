@@ -1,5 +1,5 @@
 import React from "react";
-import "./Article.css"
+import "./article.css"
 import { useHistory } from "react-router-dom";
 
 // Single card render for one Article. it is how it will render on the dashboard,
@@ -20,7 +20,7 @@ export const ArticleCard = ({ article, handleDeleteArticle }) => {
             <p><a href={article.url}>Link: {article.url}</a></p>
               {article.userId === currentUser ? 
                 <>
-                    <button type="button" onClick={() => history.push(`/articles/${article.id}/edit`)}> Edit </button>
+                    <button type="button" onClick={() => history.push(`/articles/${article.id}/edit`)}> EDIT </button>
                     <button type="button" onClick={() => handleDeleteArticle(article.id)}>DELETE</button>
                 </>
                 : null

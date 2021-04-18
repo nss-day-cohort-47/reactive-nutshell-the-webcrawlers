@@ -4,7 +4,7 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { deleteMessage, getAllMessages } from '../../data/messageManager';
-import { MessageCard } from './MessageCard';
+import { MessageCard } from './messageCard';
 
 export const MessageList = () => {
 
@@ -38,9 +38,10 @@ export const MessageList = () => {
     // return the messages to the DOM. Map through the db and give us the messages
     return (
         <>
+            <h1>It's Mail Time!</h1>
             <div className="conatiner-cards">
-                {messages.map(message =>
-                    <MessageCard key={message.id} message={message} handleDeleteMessage={handleDeleteMessage} />)}
+              {messages.map(message =>
+                <MessageCard key={message.id} message={message} handleDeleteMessage={handleDeleteMessage} />)}
             </div>
 
             <section className="section-content">

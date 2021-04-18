@@ -9,8 +9,8 @@ import { getAllUsers } from "../../data/usersManager";
 export const ArticleEditForm = () => {
   const [article, setArticle] = useState({});
 
-    // isLoading and setIsLoading are used to hold off click events until
-    // all data fiels are entered. They are set to false initially.  
+  // isLoading and setIsLoading are used to hold off click events until
+  // all data fiels are entered. They are set to false initially.  
   const [isLoading, setIsLoading] = useState(false);
 
   const { articleId } = useParams();
@@ -31,7 +31,7 @@ export const ArticleEditForm = () => {
 
   const updateExistingArticle = evt => {
     evt.preventDefault()
-        setIsLoading(true);
+    setIsLoading(true);
 
     // This is an edit, so we need the id
     const editedArticle = {
@@ -44,11 +44,10 @@ export const ArticleEditForm = () => {
     };
 
     const userId = article.userId
-    
     // This function is used to ensure that fieldsets are filled in before proceeding with submission of the edit.
     // An alert will pop up telling a user to make sure all fields are entered, 
     // ("/") is used to go back to the dashboard home page.
-    if (userId === 0 ) {
+    if (userId === 0) {
       window.alert("Please have all fields filled out")
     } else {
       updateArticle(editedArticle)
@@ -61,7 +60,7 @@ export const ArticleEditForm = () => {
     getArticleById(articleId)
       .then(article => {
         setArticle(article);
-            setIsLoading(false);
+        setIsLoading(false);
       });
   }, [articleId]);
 
