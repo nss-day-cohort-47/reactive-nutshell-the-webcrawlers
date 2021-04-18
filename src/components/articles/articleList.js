@@ -11,6 +11,7 @@ export const ArticleList = () => {
     const getArticles = () => {
         return getAllArticles()
             .then(articlesFromAPI => {
+                articlesFromAPI.sort()
                 setArticles(articlesFromAPI)
             });
     };
@@ -36,10 +37,11 @@ export const ArticleList = () => {
                 </button>
             </section>
 
-
+            {/*helper functions. We map through the array of articles and return the ArticleCard function.
+                the .reverse() will reverse the array order and display the articles with the newest enrty first.*/}
             <div className="conatiner-cards">
                 {articles.map(article =>
-                    <ArticleCard key={article.id} article={article} handleDeleteArticle={handleDeleteArticle} />)}
+                    <ArticleCard key={article.id} article={article} handleDeleteArticle={handleDeleteArticle} />).reverse()}
             </div>
         </>
     )
