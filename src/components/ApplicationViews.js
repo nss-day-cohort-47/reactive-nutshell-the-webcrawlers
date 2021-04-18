@@ -1,12 +1,12 @@
 import React from "react"
 import { Route } from "react-router-dom"
 
-import { FriendList } from "./friends/FriendList"
-import { FriendForm } from "./friends/FriendForm"
+import { FriendList } from "./friends/friendList"
+import { FriendForm } from "./friends/friendForm"
 
-import { ArticleEditForm } from "./articles/ArticleEditForm"
-import { ArticleForm } from "./articles/ArticleForm"
-import { ArticleList } from "./articles/ArticleList"
+import { ArticleEditForm } from "./articles/articleEditForm"
+import { ArticleForm } from "./articles/articleForm"
+import { ArticleList } from "./articles/articleList"
 
 import { TaskList } from "./tasks/taskList"
 import { TaskForm } from "./tasks/taskForm"
@@ -16,9 +16,9 @@ import { EventList } from "./events/eventList"
 import { EventForm } from "./events/eventForm"
 import { EventEditForm } from "./events/eventEditForm"
 
-import { MessageList } from "./messages/MessageList"
-import { MessageForm } from "./messages/MessageForm"
-import { MessageEditForm } from "./messages/MessageEditForm"
+import { MessageList } from "./messages/messageList"
+import { MessageForm } from "./messages/messageForm"
+import { MessageEditForm } from "./messages/messageEditForm"
 
 
 
