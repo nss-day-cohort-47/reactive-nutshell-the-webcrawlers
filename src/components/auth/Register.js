@@ -37,7 +37,9 @@ export const Register = () => {
                         },
                         body: JSON.stringify({
                             email: registerUser.email,
-                            name: `${registerUser.firstName} ${registerUser.lastName}`
+                            name: `${registerUser.firstName} ${registerUser.lastName}`,
+                            bio:registerUser.bio,
+                            image: "nutshell.jpg"
                         })
                     })
                         .then(res => res.json())
@@ -77,6 +79,10 @@ export const Register = () => {
                 <fieldset>
                     <label htmlFor="inputEmail"> Email address </label>
                     <input type="email" name="email" id="email" className="form-control" placeholder="Email address" required value={registerUser.email} onChange={handleInputChange} />
+                </fieldset>
+                <fieldset>
+                    <label htmlFor="inputBio"> Bio </label>
+                    <input type="bio" name="bio" id="bio" className="form-control" placeholder="Tell us about yourself!" required value={registerUser.bio} onChange={handleInputChange} />
                 </fieldset>
                 <fieldset>
                     <button type="submit"> Sign in </button>
