@@ -36,12 +36,12 @@ let searchName= ""
     //collects user input
     searchName = event.target.value
     console.log(searchName)
-  getAllUsers()
+  getAllFriends()
   .then (result => {
-    let searchedUser = result.filter(userObj => userObj.name.includes(searchName) )
+    let searchedFriend = result.filter(friendObj => friendObj.user.name.includes(searchName) )
     //THIS NEXT CONSOLE LOG DISPLAYS THE RESULTS I WANT... BUT I dont know how to update the state correctly
-    console.log(searchedUser)
-    setUsers(searchedUser)
+    console.log(searchedFriend)
+    setFriends(searchedFriend)
   })
 }
   const handleDeleteFriend = id => {
