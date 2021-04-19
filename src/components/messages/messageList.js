@@ -14,6 +14,9 @@ export const MessageList = () => {
     // variable declared to tell where the dom will re-render after an action is taken. 
     const history = useHistory();
 
+    // Used to declare who is logged in
+    const userId = parseInt(sessionStorage.getItem("nutshell_user"));
+
     // function used to tell the page to grab all the messages and hold on to them.
     const getMessages = () => {
         return getAllMessages()
@@ -30,6 +33,12 @@ export const MessageList = () => {
                 .then(setMessages))
     };
 
+    // Function used to determine if a user is the logged in user or not. 
+    const isLoggedInUser = (message) => {
+        const istheUser = userId === message.userID ? true : false;
+            return istheUser
+    }
+
     // This is telling the DOM what to do with the messages that were gathered from above.
     useEffect(() => {
         getMessages()
@@ -41,7 +50,7 @@ export const MessageList = () => {
             <h1>It's Mail Time!</h1>
             <div className="conatiner-cards">
               {messages.map(message =>
-                <MessageCard key={message.id} message={message} handleDeleteMessage={handleDeleteMessage} />)}
+                <MessageCard key={message.id} message={message} handleDeleteMessage={handleDeleteMessage} isLoggedInUser={isLoggedInUser(message)} />)}
             </div>
 
             <section className="section-content">

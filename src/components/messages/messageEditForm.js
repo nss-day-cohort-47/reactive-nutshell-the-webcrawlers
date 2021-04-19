@@ -9,10 +9,10 @@ import { getMessageById, updateMessage } from '../../data/messageManager';
 export const MessageEditForm = () => {
 
     // props set for State to set to edit the message.
-    const [ message, setMessage ] = useState({});
+    const [message, setMessage] = useState({});
 
     // Variables set in order to hold the info until further notice
-    const [ isLoading, setIsLoading ] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     // params set to help grab the message from the db and edit the correct info
     const { messageId } = useParams();
@@ -21,34 +21,34 @@ export const MessageEditForm = () => {
     const history = useHistory();
 
     // event to control the change of editing the message
-    const handleFieldChnage = event => {
+    const handleFieldChange = event => {
         const stateToChange = { ...message };
         let selectedVal = event.target.value
-            if (event.target.id.includes("Id")) {
-                selectedVal = parseInt(selectedVal)
-            }
-            // Look into messages copy it, find the id we are wishing to edit.
-            stateToChange[event.target.id] = selectedVal
-                setMessage(stateToChange);
-            };
-    
+        if (event.target.id.includes("Id")) {
+            selectedVal = parseInt(selectedVal)
+        }
+        // Look into messages copy it, find the id we are wishing to edit.
+        stateToChange[event.target.id] = selectedVal
+        setMessage(stateToChange);
+    };
+
     // 
     const updateExistingMessage = evt => {
         evt.preventDefault()
-            setIsLoading(true);
+        setIsLoading(true);
 
-    //argument passed in fetch call called in to edit the db   
-    const editedMessage = {
-        id: messageId,
-        message: message.message,
-        userId: message.userId,
-        recipientId: message.recipientId,
-        timestamp: message.timestamp
-    };
+        //argument passed in fetch call called in to edit the db   
+        const editedMessage = {
+            id: messageId,
+            message: message.message,
+            userId: message.userId,
+            recipientId: message.recipientId,
+            timestamp: message.timestamp
+        };
 
-    // after the message is updated re-render to the list without refresh
-    updateMessage(editedMessage)
-        .then(() => history.push("/messages"));
+        // after the message is updated re-render to the list without refresh
+        updateMessage(editedMessage)
+            .then(() => history.push("/messages"));
     };
 
     // The action that is taken after all the above is run.   
@@ -56,25 +56,35 @@ export const MessageEditForm = () => {
         getMessageById(messageId)
             .then(message => {
                 setMessage(message);
-                    setIsLoading(false)
-            })  
+                setIsLoading(false)
+            })
     }, [messageId]);
 
     return (
         <>
-            <form>
-                <textarea type="text" 
-                required onChange={handleFieldChnage} 
-                id="message" 
-                value={message.message}/>
-            </form>
-
-            <button type="button" disabled={isLoading}
-              onClick={updateExistingMessage}
-              className="btn btn-primary">
-                  Save Message
-            </button>
+        <h2>Edit Message: </h2>
+          <form className="messageForm">
+            <fieldset>
+              <div className="form-group">
+                  <label htmlFor="message"></label>
+                <input
+                  type="text"
+                  required
+                  className="form-control"
+                  onChange={handleFieldChange}
+                  id="message"
+                  value={message.message}
+                />
+              </div>
+              <div className="alignRight">
+                <button
+                  type="button" disabled={isLoading}
+                  onClick={updateExistingMessage}
+                  className="btn btn-primary"
+                > Submit</button>
+              </div>
+            </fieldset>
+          </form>
         </>
-    )
-};
-
+      );
+}
