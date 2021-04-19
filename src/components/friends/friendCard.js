@@ -1,6 +1,6 @@
 import React from "react"
 
-import "./FriendCard.css"
+import "./friendCard.css"
 import nutshell from "./nutshell.jpg"
 
 // import { getFriendByUserId } from "/data/FriendManager"
