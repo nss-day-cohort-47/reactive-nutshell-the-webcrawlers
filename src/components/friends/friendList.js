@@ -28,14 +28,20 @@ export const FriendList = () => {
     });
   };
 
+  //global variable declared
 let searchName= ""
+
+//Handles searchbar input
   const handleControlledInputChange = event => {
+    //collects user input
     searchName = event.target.value
     console.log(searchName)
-  getAllFriends()
+  getAllUsers()
   .then (result => {
-    let searchedUser = result.filter(friendObj => friendObj.user.name.includes(searchName) )
-    setFriends(searchedUser)
+    let searchedUser = result.filter(userObj => userObj.name.includes(searchName) )
+    //THIS NEXT CONSOLE LOG DISPLAYS THE RESULTS I WANT... BUT I dont know how to update the state correctly
+    console.log(searchedUser)
+    setUsers(searchedUser)
   })
 }
   const handleDeleteFriend = id => {
@@ -43,56 +49,18 @@ let searchName= ""
     .then(() => getAllFriends().then(setFriends));
 };
 
-//------------------------------------------------------------------------------
-//-----Jackson working on this function----------------
-  // const filterUserId = (searchName) => {
-  //   const nameFilter = getAllUsers().filter(user => {
-  //     if(user.name === searchName){
-  //       return user
-  //     }
-  //   })
-  //   showUser(nameFilter)
-  // }
-
-//------------------------------------------
-
-// const handleControlledInputChange = event => {
-//   //creates an empty array to hold string of user input
-//   let searchName = []
-//   //should create an array of letters that the user enters
-//   let searchNameTool = searchName.push(event.target.value)
-// // console.log(searchNameArray)
-
-// let searchNameArray = searchNameTool.concat(searchName)
-// console.log(searchNameArray)
-//   // takes the array of letters and makes it into a word
-//   let theName = searchNameArray.join('')
-// console.log(theName)
-//   //sets an array of user objects to allUsers
-//   let allUsers = getAllUsers()
-//   //filters the names of users with the user input
-//   let userName = allUsers.filter(userObj =>userObj.name === theName)
-//   //returns the user's name that matches
-//   return userName
-// }
-
-
-
-
-// console.log(getFriends())
-// const bobyboy = getAllUsers();
-// console.log("here")
-// console.log(bobyboy)
   // got the friends from the API on the component's first render
   //changes the state causes stuff to re-render
   useEffect(() => {
     getFriends();
   }, []);
 
+//Displays friendCards of logged in user
 const friendCards = () => {
-  // debugger
   const allFriendCards = friends.map(friend => {
+    //if the logged in user's id matches the id of a currentUserId in the friends dataset
    if( parseInt(sessionStorage.getItem("nutshell_user")) === friend.currentUserId ){
+     //return the friends that match the friendship
     return <FriendCard key={friend.user.id} handleDeleteFriend={handleDeleteFriend} friend={friend}  />
    }
    else{
@@ -108,7 +76,7 @@ return (
     <div className="container-cards">
       {friendCards()}
      <input type="text" onChange={handleControlledInputChange}  />
-     <input type="button" onClick={handleControlledInputChange} value="Search" />
+     {/* <input type="button" onClick={handleClickEvent} value="Add" /> */}
     </div>
   );
       
