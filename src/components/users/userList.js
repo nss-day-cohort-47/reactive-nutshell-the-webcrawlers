@@ -14,7 +14,7 @@ export const UserList = () => {
         console.log(user)
         let stranger = {...user}
         const newFriend = {
-            userId:stranger.target.value,
+            userId: parseInt(stranger.target.value),
             currentUserId:currentUser
         }
         console.log(newFriend)
@@ -37,7 +37,9 @@ export const UserList = () => {
     return(
         <>
         {Users.map(user =>
-          <UserCard key={user.id} user={user} handleClickEvent = {handleClickEvent}/>
+             (currentUser === user.id) 
+                ? ""
+                : <UserCard key={user.id} user={user} handleClickEvent = {handleClickEvent}/>
             )}
         </>
     )
