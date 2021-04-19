@@ -20,6 +20,8 @@ import { MessageList } from "./messages/messageList"
 import { MessageForm } from "./messages/messageForm"
 import { MessageEditForm } from "./messages/messageEditForm"
 
+import { PrivateMessageBox } from "./privateMessages/privateMessageBox"
+
 
 
 export const ApplicationViews = () => {
@@ -61,14 +63,18 @@ export const ApplicationViews = () => {
         <MessageEditForm />
       </Route>
 
+      <Route exact path="/messages/private">
+        <PrivateMessageBox />
+      </Route>
+
 
 
       <Route exact path="/tasks">
         {/* Render the component for the user's tasks */}
         <h2>Tasks</h2>
-          <section>
-            <TaskList />
-          </section>
+        <section>
+          <TaskList />
+        </section>
       </Route>
       <Route path="/tasks/create">
         <TaskForm />
@@ -76,7 +82,7 @@ export const ApplicationViews = () => {
       <Route path="/tasks/:taskId(\d+)/edit">
         <TaskEditForm />
       </Route>
-     
+
       <Route exact path="/events">
         {/* Render the component for the user's events */}
         <EventList />
@@ -87,7 +93,7 @@ export const ApplicationViews = () => {
       <Route path="/events/:eventId(\d+)/edit">
         <EventEditForm />
       </Route>
-      
+
     </>
   )
 }

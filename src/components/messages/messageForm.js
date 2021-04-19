@@ -86,4 +86,3 @@ export const MessageForm = () => {
     )
 }
 
-{/*/history.push("/messages"*/}
