@@ -1,4 +1,4 @@
-// Authored by: Sidney Crandall
+// Authored by: Jackson Goodman
 // Edit Form for users to edit the tasks that have posted.
 
 import React, { useState, useEffect } from "react";
@@ -38,7 +38,8 @@ export const TaskEditForm = () => {
       name: task.name,
       description: task.description,
       completion: task.completion,
-      userId: task.userId
+      userId: task.userId,
+      isCompleted: false
     };
 
     const userId = task.userId
