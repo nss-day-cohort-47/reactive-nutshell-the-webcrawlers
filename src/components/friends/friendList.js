@@ -36,9 +36,9 @@ let searchName= ""
     //collects user input
     searchName = event.target.value
     console.log(searchName)
-  getAllFriends()
+    getAllFriends()
   .then (result => {
-    let searchedFriend = result.filter(friendObj => friendObj.user.name.includes(searchName) )
+    let searchedFriend = result.filter(friendObj => friendObj.user.name.startsWith(searchName) )
     //THIS NEXT CONSOLE LOG DISPLAYS THE RESULTS I WANT... BUT I dont know how to update the state correctly
     console.log(searchedFriend)
     setFriends(searchedFriend)
@@ -61,7 +61,9 @@ const friendCards = () => {
     //if the logged in user's id matches the id of a currentUserId in the friends dataset
    if( parseInt(sessionStorage.getItem("nutshell_user")) === friend.currentUserId ){
      //return the friends that match the friendship
-    return <FriendCard key={friend.user.id} handleDeleteFriend={handleDeleteFriend} friend={friend}  />
+    return <FriendCard key={friend.user.id} 
+    handleDeleteFriend={handleDeleteFriend} 
+    friend={friend}  />
    }
    else{
     return  null 
@@ -74,8 +76,8 @@ const friendCards = () => {
 return (
  
     <div className="container-cards">
-      {friendCards()}
      <input type="text" onChange={handleControlledInputChange}  />
+      {friendCards()}
      {/* <input type="button" onClick={handleClickEvent} value="Add" /> */}
     </div>
   );

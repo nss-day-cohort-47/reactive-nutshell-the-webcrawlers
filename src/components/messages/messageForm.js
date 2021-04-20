@@ -10,6 +10,7 @@ import { addMessage } from '../../data/messageManager';
 
 export const MessageForm = () => {
 
+    const currentUser = JSON.parse(sessionStorage.getItem("nutshell_user"))
     // variables and props
     const [message, setMessage] = useState({
         userId: parseInt(sessionStorage.getItem("nutshell_user")),
@@ -41,7 +42,7 @@ export const MessageForm = () => {
     // save event to capture the changes from above and place them in the db
     const handleClickSaveMesage = (event) => {
         event.preventDefault()
-        const recipientId = message.recipientId
+        const recipientId = currentUser
         if (recipientId === 0) {
             window.alert("Please choose a Friend")
         } else {
@@ -65,11 +66,11 @@ export const MessageForm = () => {
             <h2 className="messageForm_title">Craft a Message</h2>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="recipientId"> To: </label>
+                    {/* <label htmlFor="recipientId"> To: </label>
                     <select value={message.recipientId} name="recipient" id="recipientId" onChange={handleControlledInputChange} className="form-control">
                         <option value="0">Select a Friend</option>
                         {users.map(user => (<option key={user.id} value={user.id}>{user.name}</option>))}
-                    </select>
+                    </select> */}
                 </div>
             </fieldset>
             <fieldset>
