@@ -2,7 +2,7 @@ const remoteURL = "http://localhost:8088"
 
 // fetch calls used to grab data 
 export const getAllMessages = () => {
-    return fetch(`${remoteURL}/messages`)
+    return fetch(`${remoteURL}/messages?_expand=user`)
         .then(result => result.json())
 }
 
