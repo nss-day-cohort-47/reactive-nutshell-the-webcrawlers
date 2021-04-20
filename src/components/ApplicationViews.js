@@ -4,6 +4,9 @@ import { Route } from "react-router-dom"
 import { FriendList } from "./friends/friendList"
 import { FriendForm } from "./friends/friendForm"
 
+import {UserList} from "./users/userList"
+
+
 import { ArticleEditForm } from "./articles/articleEditForm"
 import { ArticleForm } from "./articles/articleForm"
 import { ArticleList } from "./articles/articleList"
@@ -19,7 +22,6 @@ import { EventEditForm } from "./events/eventEditForm"
 import { MessageList } from "./messages/messageList"
 import { MessageForm } from "./messages/messageForm"
 import { MessageEditForm } from "./messages/messageEditForm"
-
 
 
 
@@ -48,8 +50,10 @@ export const ApplicationViews = () => {
         <FriendForm />
       </Route>
 
-
-
+      <Route exact path="/users">
+        {/* Render the component for list of friends */}
+        <UserList />
+      </Route>
 
       {/* Render the component for the messages */}
       <Route exact path="/messages">
@@ -92,4 +96,4 @@ export const ApplicationViews = () => {
 
     </>
   )
-}
+  }

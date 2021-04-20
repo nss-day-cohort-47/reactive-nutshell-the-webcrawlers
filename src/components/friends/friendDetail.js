@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { getFriendByUserId } from '../../friends/FriendManager';
-import './FriendDetail.css';
+import { getFriendByUserId } from '../../data/friendManager';
 import { useHistory, useParams } from "react-router-dom"
-import { deleteFriend } from "../../data/FriendManager"
+import { deleteFriend } from "../../data/friendManager"
 
 export const FriendDetail = () => {
   const [friend, setFriend] = useState({ name: "", breed: "" });
