@@ -20,7 +20,6 @@ import { MessageList } from "./messages/messageList"
 import { MessageForm } from "./messages/messageForm"
 import { MessageEditForm } from "./messages/messageEditForm"
 
-import { PrivateMessageBox } from "./privateMessages/privateMessageBox"
 
 
 
@@ -63,9 +62,6 @@ export const ApplicationViews = () => {
         <MessageEditForm />
       </Route>
 
-      <Route exact path="/messages/private">
-        <PrivateMessageBox />
-      </Route>
 
 
 

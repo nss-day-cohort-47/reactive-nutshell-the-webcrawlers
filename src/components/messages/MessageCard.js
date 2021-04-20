@@ -17,6 +17,7 @@ export const MessageCard = ({message, handleDeleteMessage}) => {
             <div className="card-content">
                 <small className="card-message">Sender: {message.user?.name}</small>
                     <p>{message.message}</p>
+                    <p>{message.timestamp}</p>
                 <br></br>
                 {/*This is a conditional to deteremine who is viewing the messages*/}
                     {message.userId === currentUser ? 
