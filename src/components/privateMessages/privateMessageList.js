@@ -29,9 +29,7 @@ export const PrivateMessageList = () => {
             .then(messagesArray => {
                 setMessage(messagesArray)
             })
-            .then(() => {
-                scrollOverflow()
-            })
+
     }
 
     useEffect(() => {

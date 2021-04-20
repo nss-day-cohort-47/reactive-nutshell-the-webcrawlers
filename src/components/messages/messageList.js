@@ -59,6 +59,7 @@ export const MessageList = () => {
                     onClick={() => { history.push("/messages/create") }}>
                     Add a New message
                 </button>
+                <button type='button' onClick={() => history.push(`/messages/private`)}>Create Private Message:</button>
             </section>
         </>
     )
