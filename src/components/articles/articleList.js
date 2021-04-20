@@ -1,3 +1,6 @@
+// Authored by: Sidney Crandall
+// Modules used to render all the articles from the articleCard 
+
 import React, { useState, useEffect } from 'react';
 import { ArticleCard } from './articleCard'
 import { deleteArticle, getAllArticles } from '../../data/articlesManager'

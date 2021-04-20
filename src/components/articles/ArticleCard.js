@@ -1,3 +1,6 @@
+// Authored by: Sidney Crandall
+// Component used to render what a single article will look like on the dom
+
 import React from "react";
 import "./article.css"
 import { useHistory } from "react-router-dom";
