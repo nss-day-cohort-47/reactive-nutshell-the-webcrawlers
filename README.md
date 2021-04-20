@@ -1,6 +1,26 @@
-# Reactive Nutshell: The Information Dashboard
+# Nutshell Project
+![](./images/project.png)
+NSS Project dealing with React, Javascript, CRUD, and database managment concepts
 
-## Setup: Follow these steps exactly
+## Installation
+git clone this repository
+
+## Usage
+1. `serve` in the project's root directory  
+2. `json-server -p 8088 -w database.json` in the project's `"root directory"/api` directory
+3. Have fun and be yourself 💯
+
+## Contributing
+[David Darden](https://github.com/DavidEdwardDarden)  
+[Sidney Crandall](https://github.com/SidneyCrandall)
+[Salma Crank](https://github.com/srcrank)
+[Jackson Goodman](https://github.com/jacksonrgoodman)  
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)  
+### Reactive Nutshell: The Information Dashboard
+
+#### Setup: Follow these steps exactly
 
 1. Clone this repository
 1. `cd` into the directory it creates
@@ -11,7 +31,7 @@
 
 > **Note:** Your `database.json` file is already in the `.gitignore` file for this project, so it will never be added to the repo or pushed to Github.
 
-## What is Reactive Nutshell?
+#### What is Reactive Nutshell?
 
 Nutshell is a new product offering that you have been tasked with building. It's an app for people to use to organize their daily tasks, events, news article, friends, and chat messages.
 
@@ -19,19 +39,19 @@ You will be using the React library to build out this application.
 
 To start you off, here's an example of what some of the resources in your API should look like once it's populated with some data from your application.
 
-### Users
+##### Users
 
 ```json
 { "id": 1, "name": "Steve Brownlee", "email": "me@me.com" }
 ```
 
-### Friends
+##### Friends
 
 ```json
 { "id": 1, "userId": 1, "currentUserId": 3 }
 ```
 
-### News Articles
+##### News Articles
 
 ```json
 {
@@ -44,20 +64,20 @@ To start you off, here's an example of what some of the resources in your API sh
 }
 ```
 
-## Professional Requirements
+#### Professional Requirements
 
 1. All teammates must use React and JSON-server. 
 1. Each module should have a comment at the top with the following info: author(s) and purpose of module
 1. The README for your project should include instructions on how another person can download and run the application
 1. An ERD showing the database relationships. A screenshot/image should be included on your README.
 
-## A Note About Authentication
+#### A Note About Authentication
 
 We want you to know that the login and registration code we have given you is fake, completely insecure, and would never be implemented in a professional application. It is a simulation authentication using very simplistic tools, because authentication is not a learning objective of students at NSS.
 
 You will be using [session storage](https://javascript.info/localstorage#sessionstorage) to keep track of which user has logged into Nutshell. You need to read the code in the **`Login.js`** and **`Register.js`** components so that you see what is going on, but you do not need to change it.
 
-## Keep in mind some tips for a good usable app
+#### Keep in mind some tips for a good usable app
 1. Use acceptable conventions
    * Logo positioned at top left
    * Navigation across the top or down the left side
@@ -76,6 +96,6 @@ You will be using [session storage](https://javascript.info/localstorage#session
    * Bulleted lists
 7. Strive for consistency.
 
-ERD:
+#ERD:
 <img src="nutshellerd.JPG">
 <img src="nutshellwireframe.JPG">
