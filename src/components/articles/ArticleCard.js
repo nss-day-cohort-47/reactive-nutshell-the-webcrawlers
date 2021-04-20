@@ -31,4 +31,3 @@ export const ArticleCard = ({ article, handleDeleteArticle }) => {
 };
 
 
-//<p>Posted by: {article.userId.name}</p>

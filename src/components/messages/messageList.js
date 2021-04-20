@@ -11,6 +11,7 @@ export const MessageList = () => {
     //Declare variables for the components and what will be effected.
     const [messages, setMessages] = useState([]);
 
+    // we need to gather a lot of variables for state in order in be able to have private messsaging.
     const [recipientMessages, setRecipientMessages] = useState([]);
     const [publicChat, setPublicChat] = useState([]);
     const [incomingMessages, setIncomingMessages] = useState([]);
@@ -22,10 +23,13 @@ export const MessageList = () => {
     const currentUser = parseInt(sessionStorage.getItem("nutshell_user"));
 
     // Fucntion to combine all the arrays from the calls.
+    // these help in modifying and step two in the setting of state.
     const filteredAndStatedArray = () => {
     const allTheArrays = [ ...recipientMessages, ...publicChat, ...incomingMessages]
     //Make every object in the array and filter out the duplicates
+    // the element being processed, the index of the element, the array the index was called upon
     let finishedMessage = allTheArrays.filter((message, index, array) => 
+        // .findIndex() excutes a method that returns the index of the first element tht satifies the provided testing. 
         index === array.findIndex((object)=> (
             object.id === message.id
         ))
