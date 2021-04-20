@@ -1,5 +1,5 @@
 # Nutshell Project
-![](./images/project.png)
+![](./project.png)
 NSS Project dealing with React, Javascript, CRUD, and database managment concepts
 
 ## Installation
